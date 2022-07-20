@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Strings</title>
+</head>
+
+<body>
+    <h1>Template Strings</h1>
+
+    <script>
+        "use strict";
+
+        let article = "Daniel";
+
+        document.body.innerHTML = `
+<section>
+  <header>
+      <h1>The React Blog</h1>
+  </header>
+  <article>
+      <h2>${article}</h2>
+      ${article}
+  </article>
+  <footer>
+      <p>copyright ${new Date().getYear()} | The React Blog</p>
+  </footer>
+</section>
+`;
+    </script>
+</body>
+
+</html>
