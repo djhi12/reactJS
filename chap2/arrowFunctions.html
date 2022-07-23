@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const lordify = function (firstName) {
+            return `${firstName} of Canterbury`;
+        };
+
+        console.log(lordify("Daniel"));
+
+        //
+        const lordify1 = firstName => `${firstName} of Canbury`;
+        console.log(lordify1("Daniel"));
+
+
+        // Typical function
+        const lordify2 = function (firstName, land) {
+            return `${firstName} of ${land}`;
+        };
+
+        // Arrow function
+        // More than one argument should be surrounded by parentheses:
+        const lordify3 = (firstName, land) => `${firstName} of ${land}`;
+        console.log(lordify3("Daniel", "Celestial"));
+
+
+        // If there are multiple lines, you’ll use curly braces:
+        const lordify4 = (firstName, land) => {
+            if (!firstName) {
+                throw new Error("a firstName is required to lordify");
+            }
+
+            if (!land) {
+                throw new Error("A lord must have a land");
+            }
+
+            return `${firstName} of ${land}`;
+        }
+
+        console.log(lordify4("Daniel", "Celestial"));
+        // console.log(lordify4("Daniel"));
+        console.log(lordify4("", "Celestial"));
+    </script>
+</body>
+
+</html>
