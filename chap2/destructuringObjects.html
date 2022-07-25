@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Objects</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const sandwich = {
+            bread: "dutch crunch",
+            meat: "tuna",
+            cheese: "swiss",
+            toppings: ["lettuce", "tomato", "mustard"],
+            sandwich1: function () {
+                return `${this.bread}`;
+            }
+        };
+
+        let {
+            bread,
+            meat
+        } = sandwich;
+        let {
+            toppings
+        } = sandwich;
+
+        bread = "garlic";
+        meat = "turkey";
+
+        console.log(sandwich.bread);
+        console.log(bread, meat);
+        console.log(sandwich);
+        console.log(this.toppings);
+        console.log(toppings);
+        console.log(this.cheese);
+        console.log(sandwich.sandwich1());
+
+
+        // ----------
+        const lordify = regularPerson => {
+            console.log(`${regularPerson.firstName} of Canterbury`);
+        };
+
+        const regularPerson = {
+            firstName: "Daniel",
+            lastName: "Idorot"
+        };
+
+        lordify(regularPerson);
+        // console.log(lordify(regularPerson));
+
+
+
+        // ----------
+        const lordify1 = ({
+            firstName
+        }) => {
+            console.log(`${firstName} of Canterbury`);
+        };
+
+        const regularPerson1 = {
+            firstName: "Daniel",
+            lastName: "Idorot"
+        };
+
+        lordify1(regularPerson1);
+
+
+
+        // ----------
+        const regularPerson2 = {
+            firstName: "Daniel",
+            lastName: "Idorot",
+            spouse: {
+                firstName: "Yna",
+                lastName: "Cal"
+            }
+        };
+
+        const lordify2 = ({
+            spouse: {
+                firstName
+            }
+        }) => {
+            console.log(`${firstName} of Canterbury`);
+        };
+
+        lordify2(regularPerson2);
+    </script>
+</body>
+
+</html>
