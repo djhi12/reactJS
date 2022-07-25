@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Arrays</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const [firstAnimal] = ["Horse", "Mouse", "Cat"];
+        console.log(firstAnimal); // Horse
+
+        const animals = ["Dog", "Snake", "Tiger"];
+        console.log(animals); 
+
+
+        // ---------
+        const [,,thirdAnimal] = ["Horse", "Mouse", "Cat"];
+        console.log(thirdAnimal); // Cat
+
+        const [,,,fourthAnimal] = ["Horse", "Mouse", "Cat"];
+        console.log(fourthAnimal); // undefined
+
+
+        // ---------
+    </script>
+</body>
+
+</html>
