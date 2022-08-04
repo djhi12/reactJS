@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const peaks = ["Tallac", "Ralston", "Rose"];
+        const canyons = ["Ward", "Blackwood"];
+        const tahoe = [...peaks, ...canyons];
+
+        console.log(tahoe);
+        console.log(tahoe.join(", "));
+
+
+        //
+        const peaks1 = ["Talla", "Ralston", "Rose"];
+        const [last] = peaks1.reverse();
+
+        console.log(last);
+        console.log(peaks1.join(", "));
+
+
+        //
+        const peaks2 = ["Tallac", "Ralston", "Rose"];
+        const [last2] = [...peaks].reverse();
+
+        console.log(last2);
+        console.log(peaks2.join(", "));
+
+
+        //
+        const lakes = ["Donner", "Marlette", "Fallen Leaf", "Cascade"];
+
+        const [first, ...others] = lakes;
+        
+        console.log(others.join(", "));
+
+
+        //
+        function directions(...args) {
+            let [start2, ...remaining] = args;
+            let [finish, ...stops] = remaining.reverse();
+        }
+
+        // directions("Truckee", "Tahoe City", "Sunnyside", "Homewood", "Tahoma");
+
+        // console.log(`drive through ${args.length} towns`);
+        // console.log(`start in ${start}`);
+        // console.log(`the destination is ${finish}`);
+        // console.log(`stopping ${stops.length} times in between`);
+
+        // directions("Truckee", "Tahoe City", "Sunnyside", "Homewood", "Tahoma");
+
+
+        //
+        const morning = {
+            breakfast: "oatmeal",
+            lunch: "peanut butter and jelly"
+        };
+
+        const dinner = "mac and cheese";
+
+        const backpackingMeals = {
+            ...morning,
+            dinner
+        };
+
+        console.log(backpackingMeals);
+        console.log(morning.breakfast);
+    </script>
+</body>
+
+</html>
