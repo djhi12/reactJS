@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Literal Enhancement</title>
+</head>
+
+<body>
+    <script>
+        "use strict";
+
+        const name = "Daniel";
+        const elevation = 9738;
+        const print = function () {
+            console.log(`Mt. ${this.name} is ${this.elevation} feet tall`);
+        }
+
+        const funHike = {
+            name,
+            elevation,
+            print
+        };
+
+        console.log(funHike);
+        funHike.print();
+
+
+        // -----------
+        // Old
+        let sound = "Sonic";
+        // let mph = 123;
+        var skier = {
+            name: name,
+            sound: sound,
+            powderYell: function () {
+                var yell = this.sound.toUpperCase();
+                console.log(`${yell} ${yell} ${yell}!!!`);
+            },
+            speed: function (mph) {
+                // let mph = 123;
+                this.speed = mph;
+                console.log("speed", 123);
+            }
+        };
+
+        // console.log(skier.powderYell());
+        skier.powderYell();
+        skier.speed();
+
+
+        // New
+        const skier1 = {
+            name,
+            sound,
+            powderYell() {
+                let yell = this.sound.toUpperCase();
+                console.log(`${yell} ${yell} ${yell}`);
+            },
+            speed(mph) {
+                this.speed = mph;
+                console.log("speed", mph);
+            }
+        };
+
+        console.log(skier1);
+        console.log(skier1.powderYell());
+        console.log(skier1.speed);
+    </script>
+</body>
+
+</html>
